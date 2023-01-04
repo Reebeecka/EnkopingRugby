@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout';
+import { Player } from './components/player';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
     <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
+          <Route path="/:player" element={<Player />} />
         </Route>
       </Routes>
     </BrowserRouter>
