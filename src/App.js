@@ -4,16 +4,13 @@ import './App.scss';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Player } from './components/player';
 
 function App() {
   const [players, setPlayers] = useState([{}]);
 
   useEffect(() => {
 
-    let localPlayers = localStorage.getItem("players");
-    if (localPlayers != null) {
-      return setPlayers(JSON.parse(localPlayers));
-    }
 
     axios
       .get("http://enkopingrugby.local/wp-json/wp/v2/posts"
@@ -38,6 +35,7 @@ function App() {
   let playersHTML = (<div className="allPlayers">
     {players && players.map(player =>
       <div className="playerCard" key={player.id}>
+        <Link to={"/" + player.id}>Läs mer</Link>
         <img src={player.profile_picture_Url}></img>
         <h1>{player.playername}</h1>
         <p>{player.position}</p>
