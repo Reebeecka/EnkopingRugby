@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -29,26 +29,25 @@ function App() {
           }
         )));
 
-    setPlayers(allPlayersFromApi);
-    localStorage.setItem("players", JSON.stringify(allPlayersFromApi));
-    console.log(allPlayersFromApi);
-  });
-}, []);
+        setPlayers(allPlayersFromApi);
+        localStorage.setItem("players", JSON.stringify(allPlayersFromApi));
+        console.log(allPlayersFromApi);
+      });
+  }, []);
 
-let playersHTML = (<div>
-{players && players.map(player =>
-    <div key={player.id}>
-
-        <h1>{player.playername}</h1>
+  let playersHTML = (<div className="allPlayers">
+    {players && players.map(player =>
+      <div className="playerCard" key={player.id}>
         <img src={player.profile_picture_Url}></img>
+        <h1>{player.playername}</h1>
         <p>{player.position}</p>
-    </div>
-)}
-</div>)
+      </div>
+    )}
+  </div>)
 
-return (
-  <>{playersHTML}</>
-);
+  return (
+    <div>{playersHTML}</div>
+  );
 }
 
 export default App;
