@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/EnkopingRugby/static/css/main.7af5a266.css",
+    "main.js": "/EnkopingRugby/static/js/main.cf1e442f.js",
+    "static/js/787.45120563.chunk.js": "/EnkopingRugby/static/js/787.45120563.chunk.js",
+    "static/media/background.svg": "/EnkopingRugby/static/media/background.2f3e88efd5eb73a76330d9474fb51ee2.svg",
+    "static/media/logo.png": "/EnkopingRugby/static/media/logo.4930097b0004a6415a0b.png",
+    "index.html": "/EnkopingRugby/index.html",
+    "main.7af5a266.css.map": "/EnkopingRugby/static/css/main.7af5a266.css.map",
+    "main.cf1e442f.js.map": "/EnkopingRugby/static/js/main.cf1e442f.js.map",
+    "787.45120563.chunk.js.map": "/EnkopingRugby/static/js/787.45120563.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7af5a266.css",
+    "static/js/main.cf1e442f.js"
+  ]
+}
