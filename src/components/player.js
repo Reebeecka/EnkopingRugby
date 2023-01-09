@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Playerpictures } from "./playerpictures"
+import backgoundSVG from "../background.svg";
 
 export function Player() {
 
@@ -55,7 +56,8 @@ export function Player() {
 
 
     return (
-        <div>
+        <div className='playerProfile'>
+            <img id="backgroundSVG" src={backgoundSVG} alt="Your SVG" />
             <img src={player.profile_picture}></img>
             <h1>{player.player_name}</h1>
             <p>{player.position}</p>

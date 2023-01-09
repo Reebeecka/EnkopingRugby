@@ -3,6 +3,7 @@ import './App.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import backgoundSVG from "./background.svg";
 
 function App() {
   const [players, setPlayers] = useState([{}]);
@@ -10,7 +11,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://enkopingrugby.local/wp-json/wp/v2/posts?acf_format=standard"
+      .get("http://enkopingrugby.local/wp-json/wp/v2/posts?per_page=100&acf_format=standard"
       )
       .then(response => {
 
@@ -32,6 +33,7 @@ function App() {
   }
 
   let playersHTML = (<div className="allPlayers">
+    <img id="backgroundSVG" src={backgoundSVG} alt="Your SVG" />
     {players && players.map(player =>
       <div onClick={() => routeChange(player.id)} className="playerCard" key={player.id}>
         <img src={player.profile_picture}></img>
@@ -42,7 +44,11 @@ function App() {
   </div>)
 
   return (
+    <>
+    <h2>Följ damerna fram till nästa SM medalj! </h2>
+    <h2>Se alla våra spelare! Tryck på en spelare för att läsa mer.</h2>
     <div>{playersHTML}</div>
+    </>
   );
 }
 
