@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import backgoundSVG from "./background.svg";
+import {motion} from "framer-motion";
 
 function App() {
   const [players, setPlayers] = useState([{}]);
@@ -44,11 +45,15 @@ function App() {
   </div>)
 
   return (
-    <>
+    <motion.div
+    initial={{x:"-100%"}}
+    animate={{x:"0%"}}
+    exit={{x:"-100%"}}
+    transition={{duration: 1.5, ease: "easeOut"}}>
     <h2>Följ damerna fram till nästa SM medalj! </h2>
     <h2>Se alla våra spelare! Tryck på en spelare för att läsa mer.</h2>
     <div>{playersHTML}</div>
-    </>
+    </motion.div>
   );
 }
 

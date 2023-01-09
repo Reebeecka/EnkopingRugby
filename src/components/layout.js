@@ -1,8 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import logo from "../logo.png";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion"
 
 export const Layout = () => {
+
+    const location = useLocation();
 
     let navigate = useNavigate();
 
@@ -17,7 +20,9 @@ export const Layout = () => {
         <h1>Enköping Rugbyklubb Damer</h1>
       </header>
       <main>
-        <Outlet></Outlet>
+        <AnimatePresence initial={false}>
+        <Outlet location={location} key={location.pathname}></Outlet>
+        </AnimatePresence>
       </main>
     </>);
 }

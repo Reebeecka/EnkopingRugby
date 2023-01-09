@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Playerpictures } from "./playerpictures"
 import backgoundSVG from "../background.svg";
+import {motion} from "framer-motion";
 
 export function Player() {
 
@@ -56,7 +57,11 @@ export function Player() {
 
 
     return (
-        <div className='playerProfile'>
+        <motion.div className='playerProfile'
+        initial={{x:"100%"}}
+        animate={{x:"0%"}}
+        exit={{x:"100%"}}
+        transition={{duration: 1.5, ease: "easeOut"}}>
             <img id="backgroundSVG" src={backgoundSVG} alt="Your SVG" />
             <img src={player.profile_picture}></img>
             <h1>{player.player_name}</h1>
@@ -74,7 +79,7 @@ export function Player() {
 
             {medaljHTML}
             <Playerpictures id={id}></Playerpictures>
-        </div>
+        </motion.div>
     );
 
 
