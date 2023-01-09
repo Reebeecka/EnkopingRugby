@@ -8,6 +8,7 @@ export function Player() {
 
     const { id } = useParams()
     const [player, setPlayer] = useState([{}]);
+    const [theMedals, setTheMedals] = useState([]);
 
     const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
 
@@ -21,13 +22,17 @@ export function Player() {
             });
     }, []);
 
-    let allMedals = [];
+    useEffect(() => {
+        let allMedals = [];
     allMedals.push(player.medal_1, player.medal_2, player.medal_3, player.medal_4, player.medal_5, player.medal_6, player.medal_7, player.medal_8, player.medal_9)
 
-    console.log(allMedals);
+    console.log("from medals",allMedals);
+    setTheMedals(allMedals);
+    }, [player]);
+
 
     let medaljHTML = (<div>
-        {allMedals[0] != undefined && allMedals.map(medaljen =>
+        {theMedals[0] != undefined && theMedals.map(medaljen =>
             <div>
                 {medaljen.placement == 1 && (
                     <div className='bajs'>
@@ -66,7 +71,7 @@ export function Player() {
             <p>{player.best_about_team}</p>
 
             {medaljHTML}
-            <Playerpictures></Playerpictures>
+            <Playerpictures id={id}></Playerpictures>
         </div>
     );
 
