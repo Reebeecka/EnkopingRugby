@@ -320,25 +320,18 @@ h2 {
   flex-wrap: wrap;
 }
 
-.lg-backdrop.in {
-  opacity: 0.85;
+.lg-backdrop {
+  opacity: 0.4 !important;
+  background-color: #006737 !important;
 }
-.fixed-size.lg-outer .lg-inner {
-background-color: #FFF;
-}
-.fixed-size.lg-outer .lg-sub-html {
-position: absolute;
-text-align: left;
-}
-.fixed-size.lg-outer .lg-toolbar {
-background-color: transparent;
-}
-.fixed-size.lg-outer .lg-toolbar .lg-icon {
-color: #FFF;
 
+.lg-toolbar {
+background-color: transparent !important;
 }
-.fixed-size.lg-outer .lg-img-wrap {
-padding: 12px;
-
+.lg-toogle-thumb{
+  color: #ffcb04 !important;
+}
+.lg-thumb-outer{
+  background-color: transparent !important;
 }
 

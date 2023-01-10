@@ -47,7 +47,7 @@ function App() {
 
     {players && players.map(player =>
       <div onClick={() => routeChange(player.id)} className="playerCard" key={player.id}>
-        <img src={player.profile_picture}></img>
+        <img alt=""src={player.profile_picture}></img>
         <h1 >{player.playername}</h1>
         <p >{player.position}</p>
       </div>
