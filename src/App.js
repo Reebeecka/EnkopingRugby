@@ -9,7 +9,16 @@ function App() {
   const [players, setPlayers] = useState([{}]);
   let navigate = useNavigate();
 
+  window.onbeforeunload = function() {
+    localStorage.clear();
+ }
+
+
   useEffect(() => {
+    let item = localStorage.getItem("players");
+    if (item != null) {
+        return setPlayers(JSON.parse(item));
+    }
     axios
       .get("http://enkopingrugby.local/wp-json/wp/v2/posts?per_page=100&acf_format=standard"
       )
@@ -24,8 +33,10 @@ function App() {
           }
         )));
         setPlayers(allPlayersFromApi);
+        localStorage.setItem("players", JSON.stringify(allPlayersFromApi));
       });
   }, []);
+
 
   const routeChange = (id) => {
     let path = `/` + id;
@@ -37,8 +48,8 @@ function App() {
     {players && players.map(player =>
       <div onClick={() => routeChange(player.id)} className="playerCard" key={player.id}>
         <img src={player.profile_picture}></img>
-        <h1>{player.playername}</h1>
-        <p>{player.position}</p>
+        <h1 >{player.playername}</h1>
+        <p >{player.position}</p>
       </div>
     )}
   </div>)

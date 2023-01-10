@@ -7,6 +7,7 @@ import firstPlaceSVG from "../1st-place-medal.svg";
 import secondPlaceSVG from "../2nd-place-medal.svg";
 import thirdPlaceSVG from "../3rd-place-medal.svg";
 import { motion } from "framer-motion";
+import '../App.scss';
 
 export function Player() {
 
@@ -16,7 +17,6 @@ export function Player() {
 
     const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
 
-    console.log(id);
     useEffect(() => {
         axios
             .get(url
@@ -30,7 +30,6 @@ export function Player() {
         let allMedals = [];
         allMedals.push(player.medal_1, player.medal_2, player.medal_3, player.medal_4, player.medal_5, player.medal_6, player.medal_7, player.medal_8, player.medal_9)
 
-        console.log("from medals", allMedals);
         setTheMedals(allMedals);
     }, [player]);
 

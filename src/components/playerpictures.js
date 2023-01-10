@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import LightGallery from 'lightgallery/react';
+import '../App.scss';
 
 // import styles
 import 'lightgallery/css/lightgallery.css';
@@ -21,8 +21,7 @@ export function Playerpictures(props) {
 
     const [allImages, setAllImages] = useState([{}]);
 
-    let imagesHTML = <></>
-    let testHTML = <></>
+    let picturesHTML = <></>
 
     const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + props.id + "?acf_format=standard";
 
@@ -37,7 +36,7 @@ export function Playerpictures(props) {
 
     if (allImages != false) {
         if (allImages.length > 0) {
-            testHTML = (<div className="App">
+            picturesHTML = (
                 <LightGallery
                     speed={500}
                     addClass={"testing-stuff"}
@@ -51,22 +50,10 @@ export function Playerpictures(props) {
                         )
                     }
                 </LightGallery>
-            </div>)
+            )
         }
     }
 
 
-
-    console.log(allImages);
-    if (allImages != false) {
-        if (allImages.length > 0) {
-            imagesHTML = (<div>
-                {allImages.map(image =>
-                    <img src={image.guid}></img>
-                )}
-            </div>)
-        }
-    }
-
-    return (<div>{testHTML}</div>)
+    return (<section className='pictures-of-player'>{picturesHTML}</section>)
 }

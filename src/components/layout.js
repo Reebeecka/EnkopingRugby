@@ -9,10 +9,12 @@ export const Layout = () => {
 
     let navigate = useNavigate();
 
+
     const routeChange = () => {
         let path = `/`;
         navigate(path);
       }
+
 
     return(<>
     <header>
