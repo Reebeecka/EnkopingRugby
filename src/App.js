@@ -3,7 +3,6 @@ import './App.scss';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import backgoundSVG from "./background.svg";
 import {motion} from "framer-motion";
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
   }
 
   let playersHTML = (<div className="allPlayers">
-    <img id="backgroundSVG" src={backgoundSVG} alt="Your SVG" />
+
     {players && players.map(player =>
       <div onClick={() => routeChange(player.id)} className="playerCard" key={player.id}>
         <img src={player.profile_picture}></img>

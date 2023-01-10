@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Playerpictures } from "./playerpictures"
-import backgoundSVG from "../background.svg";
 import firstPlaceSVG from "../1st-place-medal.svg";
 import secondPlaceSVG from "../2nd-place-medal.svg";
 import thirdPlaceSVG from "../3rd-place-medal.svg";
@@ -36,7 +35,7 @@ export function Player() {
     }, [player]);
 
 
-    let medaljHTML = (<div>
+    let medaljHTML = (<section className='allMedals'>
         {theMedals[0] != undefined && theMedals.map(medaljen =>
             <div>
                 {medaljen.placement == 1 && (
@@ -62,7 +61,7 @@ export function Player() {
                 )}
             </div>
         )}
-    </div>)
+    </section>)
 
 
     return (
@@ -71,27 +70,34 @@ export function Player() {
             animate={{ x: "0%" }}
             exit={{ x: "100%" }}
             transition={{ duration: 1.5, ease: "easeOut" }}>
-            <img id="backgroundSVG" src={backgoundSVG} alt="Your SVG" />
-            <img src={player.profile_picture}></img>
-            <h1 className='player-name'>{player.player_name}</h1>
-            <div className='information-background'><h2 id='player-position'>{player.position}</h2></div>
-            <div className='small-information-background' id='player-age-div'><h3 id="player-age">{player.age} år</h3></div>
-            <div className='small-information-background' id='player-height-div'><h3 id='player-height'>{player.height} cm</h3></div>
-            <div className='small-information-background' id='player-weight-div'><h3 id="player-weight">{player.weight} kg</h3></div>
-            <div className='smallest-information-background' id='player-started-rugby-div'><p id="player-started-rugby">Började spela {player.started_rugby}</p></div>
-            <div className='smallest-information-background' id="player-in-enkoping-div"><p id='player-in-enkoping'>Började i Enköping {player.in_enkoping_since}</p></div>
-            <section className='other-clubs'>
-                <h4>Andra klubbar {player.player_name.split(" ")[0]} spelat i:</h4>
-                <p>{player.other_clubs}</p>
+            <secion className="player-main-info">
+                <img src={player.profile_picture}></img>
+                <secction className="player-main-info-text">
+                    <div className='information-background'><h3 id='player-position'>{player.position}</h3></div>
+                    <div className='small-information-background' id='player-age-div'><h3 id="player-age">{player.age} år</h3></div>
+                    <div className='small-information-background' id='player-height-div'><h3 id='player-height'>{player.height} cm</h3></div>
+                    <div className='small-information-background' id='player-weight-div'><h3 id="player-weight">{player.weight} kg</h3></div>
+                    <div className='smallest-information-background' id='player-started-rugby-div'><p id="player-started-rugby">Började spela rugby {player.started_rugby}</p></div>
+                    <div className='smallest-information-background' id="player-in-enkoping-div"><p id='player-in-enkoping'>Började i Enköping {player.in_enkoping_since}</p></div>
+                    <section className='other-clubs'>
+                        <h4>Andra klubbar hon spelat i:</h4>
+                        <p>{player.other_clubs}</p>
+                    </section>
+                </secction>
+                {medaljHTML}
+            </secion>
+            <section className='player-allStories'>
+                <p className='best-about-team'>{player.best_about_team}</p>
+                <section className='player-stories'>
+                    <h5>Spelaren berättar en rolig rugby historia:</h5>
+                    <p>{player.funny_story}</p>
+                    <h5>Skador från rugbyn:</h5>
+                    <p>{player.injuries}</p>
+                    <h5>Bästa rugbyminne!</h5>
+                    <p>{player.best_memory}</p>
+                </section>
             </section>
-            <section className='player-stories'>
-            <p>{player.funny_story.replace(/\r\n/g, '<br/>')}</p>
-            <p>{player.injuries}</p>
-            <p>{player.best_memory.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br/>$2')}</p>
-            </section>
-            <p>{player.best_about_team.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br/>$2')}</p>
 
-            {medaljHTML}
             <Playerpictures id={id}></Playerpictures>
         </motion.div>
     );
