@@ -51,21 +51,21 @@ export function Player() {
     let medaljHTML = (<section className='allMedals'>
         {theMedals[0] !== undefined && theMedals.map(medaljen =>
             <div>
-                {medaljen.placement == 1 && (
+                {medaljen.placement === "1" && (
                     <div className='medal' id='first-place'>
                         <img alt='första pris medalj' src={firstPlaceSVG}></img>
                         <p>{medaljen.tournament}</p>
                         <p className='bold'>{medaljen.team}</p>
                     </div>
                 )}
-                {medaljen.placement == 2 && (
+                {medaljen.placement === "2" && (
                     <div className='medal' id='second-place'>
                         <img alt='andra pris medalj' src={secondPlaceSVG}></img>
                         <p>{medaljen.tournament}</p>
                         <p className='bold'>{medaljen.team}</p>
                     </div>
                 )}
-                {medaljen.placement == 3 && (
+                {medaljen.placement === "3" && (
                     <div className='medal' id='third-place'>
                         <img alt='tredje pris medalj' src={thirdPlaceSVG}></img>
                         <p>{medaljen.tournament}</p>
