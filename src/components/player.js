@@ -14,15 +14,30 @@ export function Player() {
     const { id } = useParams()
     const [player, setPlayer] = useState([{}]);
     const [theMedals, setTheMedals] = useState([]);
+    const[playerFirstName, setPlayerFirstName] = useState("");
 
     const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
 
+    window.onbeforeunload = function() {
+        localStorage.clear();
+     }
+
     useEffect(() => {
+        let item = localStorage.getItem(id);
+        if (item != null) {
+            let player = JSON.parse(item)
+            let firstName=player.player_name.split(' ')[0]
+            setPlayerFirstName(firstName)
+        return setPlayer(player);
+    }
         axios
             .get(url
             )
             .then(response => {
                 setPlayer(response.data.acf)
+                let firstName=response.data.acf.player_name.split(' ')[0];
+                setPlayerFirstName(firstName);
+                localStorage.setItem(response.data.id, JSON.stringify(response.data.acf));
             });
     }, []);
 
@@ -79,20 +94,20 @@ export function Player() {
                     <div className='smallest-information-background' id='player-started-rugby-div'><p id="player-started-rugby">Började spela rugby {player.started_rugby}</p></div>
                     <div className='smallest-information-background' id="player-in-enkoping-div"><p id='player-in-enkoping'>Började i Enköping {player.in_enkoping_since}</p></div>
                     <section className='other-clubs'>
-                        <h4>Andra klubbar hon spelat i:</h4>
+                        <h4>Andra klubbar {playerFirstName} spelat i:</h4>
                         <p>{player.other_clubs}</p>
                     </section>
                 </secction>
                 {medaljHTML}
             </secion>
             <section className='player-allStories'>
-                <p className='best-about-team'>{player.best_about_team}</p>
+                <p className='best-about-team'>"{player.best_about_team}"</p>
                 <section className='player-stories'>
-                    <h5>Spelaren berättar en rolig rugby historia:</h5>
+                    <h5>{playerFirstName} berättar en rolig rugby historia:</h5>
                     <p>{player.funny_story}</p>
                     <h5>Skador från rugbyn:</h5>
                     <p>{player.injuries}</p>
-                    <h5>Bästa rugbyminne!</h5>
+                    <h5>{playerFirstName}s bästa rugbyminne!</h5>
                     <p>{player.best_memory}</p>
                 </section>
             </section>
