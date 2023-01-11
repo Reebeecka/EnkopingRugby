@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useOutletContext  } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Playerpictures } from "./playerpictures"

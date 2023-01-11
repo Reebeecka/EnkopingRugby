@@ -20,7 +20,7 @@ function App() {
         return setPlayers(JSON.parse(item));
     }
     axios
-      .get("http://enkopingrugby.local/wp-json/wp/v2/posts?per_page=100&acf_format=standard"
+      .get("http://enkopingrugby.local/wp-json/wp/v2/posts?per_page=100&acf_format=standard&orderby=title&order=asc"
       )
       .then(response => {
 
@@ -60,8 +60,10 @@ function App() {
     animate={{x:"0%"}}
     exit={{x:"-100%"}}
     transition={{duration: 1.5, ease: "easeOut"}}>
-    <h2>Följ damerna fram till nästa SM medalj! </h2>
+    <div className='follow-team'>
+      <h2>Följ damerna fram till nästa SM medalj! </h2>
     <h2>Se alla våra spelare! Tryck på en spelare för att läsa mer.</h2>
+    </div>
     <div>{playersHTML}</div>
     </motion.div>
   );
