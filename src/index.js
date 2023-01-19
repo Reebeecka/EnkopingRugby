@@ -7,15 +7,24 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout';
 import { Player } from './components/player';
 import { NotFound } from './components/notfound';
+import { useEffect, useState } from "react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+let test = "hej"
+
+function guests(test) {
+  test = test;
+  console.log("test from function" +test);
+}
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout  props={test}></Layout>}>
           <Route index element={<App />} />
-          <Route path="/:id" title="bajs"element={<Player />} />
+          <Route path="/:id" element={<Player guests={guests}></Player>} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

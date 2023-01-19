@@ -2,17 +2,24 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-background-color: #004f2a;
+  background-color: #004f2a;
   width: 100vw;
-  background-image: url(./background.svg);
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
   overflow-x: hidden;
 }
+@media screen and (min-width: 1160px) {
+  body {
+    background-image: url(./background.svg);
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    overflow-x: hidden;
+  }
+}
 header {
+overflow-x: hidden;
   z-index: 1000;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100vw;
   display: flex;
@@ -25,8 +32,8 @@ header {
     position: absolute;
     left: 20px;
     top: 10px;
-    width: 167px;
-    height: 204px;
+    width: 82px;
+    height: 100px;
     cursor: pointer;
     z-index: 999;
   }
@@ -34,23 +41,52 @@ header {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: 26px;
+    margin-left: 30%;
     color: #ffce31;
+  }
+}
+@media screen and (min-width: 1160px) {
+  header {
+    position: fixed;
+    img {
+      width: 167px;
+      height: 204px;
+    }
+    h1 {
+      font-size: 64px;
+      margin-left: 0;
+    }
   }
 }
 h2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
   color: white;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 25px;
   text-align: center;
-
   color: #ffffff;
+}
+@media screen and (min-width: 1160px) {
+  h2 {
+    font-size: 25px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.follow-team {
+  margin-top: 0vh;
+}
+@media screen and (min-width: 1160px) {
+  .follow-team {
+    margin-top: 20vh;
+  }
 }
 .allPlayers {
   justify-content: center;
@@ -59,20 +95,46 @@ h2 {
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
-.follow-team{
-  margin-top: 20vh;
+.playerCard {
+  height: 500px;
+  background-color: #ffcb04;
+  margin: 8px;
+  cursor: pointer;
+  h1,
+  p {
+    margin-top: 10px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+  }
+  img {
+    width: 95vw;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+@media screen and (min-width: 1160px) {
+  .playerCard {
+    height: 350px;
+    padding: 8px 8px 0px 8px;
+    img {
+      width: 229px;
+      height: 250px;
+    }
+  }
 }
 .playerProfile {
   width: 100vw;
-  margin-top: 20vh;
   .player-main-info {
-    display: flex;
-    margin-top: 50px;
-    padding-left: 90px;
-    padding-right: 90px;
     img {
-      width: 417.7px;
-      height: 456px;
+      margin-top: 16px;
+      width: 100vw;
+      height: 450px;
       object-fit: cover;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       z-index: 10;
@@ -81,31 +143,30 @@ h2 {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 456px;
+      height: 380px;
       .information-background {
-        width: 480px;
-        height: 54px;
-        margin-left: -26px;
+        width: 90vw;
+        height: 40px;
+        margin-left: -10px;
         background: linear-gradient(104.1deg, #006737 56.69%, #ffcb04 85.69%);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 40px;
-
         display: flex;
         align-items: center;
         #player-position {
           font-family: "Poppins";
           font-style: normal;
           font-weight: 600;
-          font-size: 32px;
-          line-height: 48px;
+          font-size: 30px;
+          line-height: 24px;
           text-transform: uppercase;
           color: #ffffff;
-          margin-left: 36px;
+          margin-left: 20px;
         }
       }
       .small-information-background {
-        width: 365px;
-        height: 41px;
+        width: 80vw;
+        height: 30px;
 
         background: linear-gradient(104.1deg, #006737 56.69%, #ffcb04 85.69%);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -117,7 +178,7 @@ h2 {
           font-family: "Roboto";
           font-style: normal;
           font-weight: 400;
-          font-size: 24px;
+          font-size: 20px;
           line-height: 28px;
           color: #ffffff;
         }
@@ -132,7 +193,7 @@ h2 {
         }
       }
       #player-age-div {
-        margin-left: -34px;
+        margin-left: -33px;
       }
       #player-height-div {
         margin-left: -100px;
@@ -174,8 +235,9 @@ h2 {
         width: 320px;
       }
       .other-clubs {
-        width: 281px;
-        height: 141px;
+        width: 90vw;
+        height: auto;
+        padding: 0px 0px 10px 0px;
 
         background: #ffce31;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -184,8 +246,8 @@ h2 {
         p {
           margin: 5px;
           margin-left: 18px;
-          width: 260px;
-          height: 74px;
+          width: 90vw;
+          height: auto;
 
           font-family: "Roboto";
           font-style: normal;
@@ -211,11 +273,11 @@ h2 {
     }
     .allMedals {
       display: flex;
-      flex-direction: column;
-      height: 456px;
+      flex-direction: row;
+      height: auto;
       flex-wrap: wrap;
-      gap: 40px;
-      margin-left: 10px;
+      gap: 13px;
+      margin-left: 0px;
       .medal {
         width: 118px;
         height: 115px;
@@ -243,31 +305,27 @@ h2 {
       }
     }
   }
-
-  .player-allStories{
-    display: flex;
-    padding-left: 90px;
-    padding-right: 90px;
+  .player-allStories {
+    display: relative;
+    padding-left: 16px;
+    padding-right: 0px;
     margin-bottom: 50px;
-    gap: 50px;
     .best-about-team {
       white-space: pre-wrap;
       margin-top: 50px;
-      width: 30%;
+      width: 90vw;
       font-family: "Roboto";
       font-style: italic;
       font-weight: 400;
       font-size: 24px;
       line-height: 30px;
-  
       text-align: center;
-  
       color: #ffffff;
     }
     .player-stories {
       margin-top: 2rem;
       padding: 1rem;
-      width: 70%;
+      width: 84vw;
       background: #006737;
       h5 {
         font-family: "Roboto";
@@ -275,7 +333,7 @@ h2 {
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-  
+
         color: #ffffff;
       }
       p {
@@ -286,61 +344,35 @@ h2 {
         font-size: 14px;
         line-height: 19px;
         margin-bottom: 1rem;
-  
+
         color: #ffffff;
       }
     }
   }
-
-}
-.playerCard {
-  height: 350px;
-  background-color: #ffcb04;
-  padding: 8px 8px 0px 8px;
-  margin: 8px;
-  cursor: pointer;
-  h1,
-  p {
-    margin-top: 10px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    color: #000000;
-  }
-  img {
-    width: 229px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
 }
 
-.pictures-of-player{
+.pictures-of-player {
   width: 90vw;
   margin-left: 5vw;
   margin-right: 5vw;
   display: flex;
   flex-wrap: wrap;
 }
-
 .lg-backdrop {
-  margin-top: 16vh;
-  height: 84vh !important;
-  opacity: 0.4 !important;
+  margin-top: 0vh;
+  height: 100vh !important;
+  opacity: 0.8 !important;
   background-color: #006737 !important;
   z-index: 1 !important;
 }
 
 .lg-toolbar {
-background-color: transparent !important;
+  background-color: transparent !important;
 }
-.lg-toogle-thumb{
+.lg-toogle-thumb {
   color: #ffcb04 !important;
 }
-.lg-thumb-outer{
+.lg-thumb-outer {
   background-color: transparent !important;
 }
 .lg-outer .lg-content {
@@ -349,4 +381,82 @@ background-color: transparent !important;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media screen and (min-width: 1160px) {
+  .playerProfile {
+    margin-top: 20vh;
+    .player-main-info {
+      display: flex;
+      margin-top: 50px;
+      padding-left: 90px;
+      padding-right: 90px;
+      img {
+        margin-top: 0;
+        width: 417.7px;
+        height: 456px;
+      }
+      .player-main-info-text {
+        height: 456px;
+        .information-background {
+          width: 480px;
+          height: 54px;
+          margin-left: -26px;
+          #player-position {
+            font-size: 32px;
+            line-height: 48px;
+            margin-left: 36px;
+          }
+        }
+        .small-information-background {
+          width: 365px;
+          height: 41px;
+          h3 {
+            font-size: 24px;
+          }
+        }
+        .other-clubs {
+          width: 281px;
+          height: 141px;
+          padding: 0px 0px 0px 0px;
+          p {
+            margin: 5px;
+            margin-left: 18px;
+            width: 260px;
+            height: 74px;
+          }
+        }
+        .allMedals {
+          flex-direction: column;
+          height: 456px;
+          gap: 40px;
+          margin-left: 10px;
+        }
+      }
+    }
+    
+  }
+  .player-allStories {
+    display: flex;
+    margin-left: 90px;
+    padding-left: 90px;
+    padding-right: 90px;
+    margin-bottom: 50px;
+    gap: 50px;
+    .best-about-team {
+      width: 30% !important;
+    }
+    .player-stories {
+      width: 70%;
+      margin-right: 5%;
+    }
+  }
+  pictures-of-player {
+    margin-left: 5vw;
+  }
+  .lg-backdrop {
+    margin-top: 16vh;
+    height: 84vh !important;
+    opacity: 0.4 !important;
+  }
 }

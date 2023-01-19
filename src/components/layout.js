@@ -4,8 +4,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion"
 
 
-export const Layout = () => {
+export const Layout = (props) => {
 
+  console.log("test from comp"+props.props);
     const location = useLocation();
 
     let navigate = useNavigate();

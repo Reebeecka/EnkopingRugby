@@ -9,7 +9,11 @@ import thirdPlaceSVG from "../3rd-place-medal.svg";
 import { motion } from "framer-motion";
 import '../App.scss';
 
-export function Player() {
+export function Player(props) {
+
+    function onOptionClicked(option) {
+        props.guests("kalle");
+      };
 
     const { id } = useParams()
     const [player, setPlayer] = useState([{}]);
@@ -28,6 +32,7 @@ export function Player() {
             let player = JSON.parse(item)
             let firstName=player.player_name.split(' ')[0]
             setPlayerFirstName(firstName)
+            onOptionClicked(player.player_name)
         return setPlayer(player);
     }
         axios
