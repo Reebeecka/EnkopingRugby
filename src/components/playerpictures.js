@@ -27,12 +27,12 @@ export function Playerpictures(props) {
 
     useEffect(() => {
         axios
-            .get(url,{
-                auth: {
-                  username: "expansion",
-                  password: "wiggly",
-             }
-              }
+        .get(url, {
+            auth: {
+                username: "expansion",
+                password: "wiggly",
+            }
+        }
             )
             .then(response => {
                 setAllImages(response.data.images_of_player)
