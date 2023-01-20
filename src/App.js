@@ -20,7 +20,12 @@ function App() {
         return setPlayers(JSON.parse(item));
     }
     axios
-      .get("http://enkopingrugby.local/wp-json/wp/v2/posts?per_page=100&acf_format=standard&orderby=title&order=asc"
+      .get("https://incandescent-downtown.localsite.io/wp-json/wp/v2/posts?per_page=100&acf_format=standard&orderby=title&order=asc",{
+        auth: {
+          username: "expansion",
+          password: "wiggly",
+     }
+      }
       )
       .then(response => {
 

@@ -23,11 +23,16 @@ export function Playerpictures(props) {
 
     let picturesHTML = <></>
 
-    const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + props.id + "?acf_format=standard";
+    const url = "https://incandescent-downtown.localsite.io/wp-json/wp/v2/posts/" + props.id + "?acf_format=standard";
 
     useEffect(() => {
         axios
-            .get(url
+            .get(url,{
+                auth: {
+                  username: "expansion",
+                  password: "wiggly",
+             }
+              }
             )
             .then(response => {
                 setAllImages(response.data.images_of_player)

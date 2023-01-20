@@ -20,7 +20,7 @@ export function Player(props) {
     const [theMedals, setTheMedals] = useState([]);
     const[playerFirstName, setPlayerFirstName] = useState("");
 
-    const url = "http://enkopingrugby.local/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
+    const url = "https://incandescent-downtown.localsite.io/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
 
     window.onbeforeunload = function() {
         localStorage.clear();
@@ -36,7 +36,12 @@ export function Player(props) {
         return setPlayer(player);
     }
         axios
-            .get(url
+            .get(url,{
+                auth: {
+                  username: "expansion",
+                  password: "wiggly",
+             }
+              }
             )
             .then(response => {
                 setPlayer(response.data.acf)
