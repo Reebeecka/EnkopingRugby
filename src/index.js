@@ -11,20 +11,13 @@ import { useEffect, useState } from "react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-let test = "hej"
-
-function guests(test) {
-  test = test;
-  console.log("test from function" +test);
-}
-
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-        <Route path="/" element={<Layout  props={test}></Layout>}>
+        <Route path="/" element={<Layout></Layout>}>
           <Route index element={<App />} />
-          <Route path="/:id" element={<Player guests={guests}></Player>} />
+          <Route path="/:id" element={<Player></Player>} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -9,43 +9,42 @@ import thirdPlaceSVG from "../3rd-place-medal.svg";
 import { motion } from "framer-motion";
 import '../App.scss';
 
-export function Player(props) {
-
-    function onOptionClicked(option) {
-        props.guests("kalle");
-      };
+export function Player() {
 
     const { id } = useParams()
     const [player, setPlayer] = useState([{}]);
     const [theMedals, setTheMedals] = useState([]);
-    const[playerFirstName, setPlayerFirstName] = useState("");
+    const [playerFirstName, setPlayerFirstName] = useState("");
 
     const url = "https://incandescent-downtown.localsite.io/wp-json/wp/v2/posts/" + id + "?acf_format=standard";
 
-    window.onbeforeunload = function() {
+    window.onbeforeunload = function () {
         localStorage.clear();
-     }
+    }
 
     useEffect(() => {
         let item = localStorage.getItem(id);
         if (item != null) {
             let player = JSON.parse(item)
-            let firstName=player.player_name.split(' ')[0]
+            let firstName = player.player_name.split(' ')[0]
             setPlayerFirstName(firstName)
-            onOptionClicked(player.player_name)
-        return setPlayer(player);
-    }
+            localStorage.setItem("heading", player.player_name);
+            window.dispatchEvent(new Event('storage'))
+            return setPlayer(player);
+        }
         axios
-            .get(url,{
+            .get(url, {
                 auth: {
-                  username: "expansion",
-                  password: "wiggly",
-             }
-              }
+                    username: "expansion",
+                    password: "wiggly",
+                }
+            }
             )
             .then(response => {
                 setPlayer(response.data.acf)
-                let firstName=response.data.acf.player_name.split(' ')[0];
+                let firstName = response.data.acf.player_name.split(' ')[0];
+                localStorage.setItem("heading", response.data.acf.player_name);
+                window.dispatchEvent(new Event('storage'))
                 setPlayerFirstName(firstName);
                 localStorage.setItem(response.data.id, JSON.stringify(response.data.acf));
             });
@@ -94,7 +93,7 @@ export function Player(props) {
             exit={{ x: "100%" }}
             transition={{ duration: 1.5, ease: "easeOut" }}>
             <secion className="player-main-info">
-                <img alt="profilbild på spelare"src={player.profile_picture}></img>
+                <img alt="profilbild på spelare" src={player.profile_picture}></img>
                 <secction className="player-main-info-text">
                     <div className='information-background'><h3 id='player-position'>{player.position}</h3></div>
                     <div className='small-information-background' id='player-age-div'><h3 id="player-age">{player.age} år</h3></div>
