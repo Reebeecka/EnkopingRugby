@@ -17,6 +17,7 @@ root.render(
     <Routes>
         <Route path="/" element={<Layout></Layout>}>
           <Route index element={<App />} />
+          <Route path="/EnkopingRugby" element={<App></App>} />
           <Route path="/:id" element={<Player></Player>} />
           <Route path="*" element={<NotFound />} />
         </Route>
