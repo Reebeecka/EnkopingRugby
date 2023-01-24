@@ -11,8 +11,8 @@ body {
 @media screen and (min-width: 1160px) {
   body {
     background-image: url(./background.svg);
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: repeat;
     overflow-x: hidden;
   }
 }
