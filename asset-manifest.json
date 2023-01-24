@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/EnkopingRugby/static/css/main.b8e79410.css",
+    "main.css": "/EnkopingRugby/static/css/main.002cef07.css",
     "main.js": "/EnkopingRugby/static/js/main.7d4d55dd.js",
     "static/js/787.45120563.chunk.js": "/EnkopingRugby/static/js/787.45120563.chunk.js",
     "static/media/background.svg": "/EnkopingRugby/static/media/background.2f3e88efd5eb73a76330.svg",
@@ -13,12 +13,12 @@
     "static/media/2nd-place-medal.svg": "/EnkopingRugby/static/media/2nd-place-medal.9f71d3b2caf74e37bb0a0371e3de6ad4.svg",
     "static/media/lg.woff2?io9a6k": "/EnkopingRugby/static/media/lg.64b800aa30714fd916dc.woff2",
     "index.html": "/EnkopingRugby/index.html",
-    "main.b8e79410.css.map": "/EnkopingRugby/static/css/main.b8e79410.css.map",
+    "main.002cef07.css.map": "/EnkopingRugby/static/css/main.002cef07.css.map",
     "main.7d4d55dd.js.map": "/EnkopingRugby/static/js/main.7d4d55dd.js.map",
     "787.45120563.chunk.js.map": "/EnkopingRugby/static/js/787.45120563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8e79410.css",
+    "static/css/main.002cef07.css",
     "static/js/main.7d4d55dd.js"
   ]
 }
