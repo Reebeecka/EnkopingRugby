@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+
 function App() {
   const [players, setPlayers] = useState([{}]);
   let navigate = useNavigate();
@@ -54,12 +55,12 @@ function App() {
 
   let playersHTML = (<div className="allPlayers">
 
-    {players && players.map(player =>
-      <div onClick={() => routeChange(player.id)} className="playerCard" key={player.id}>
-        <img alt="" src={player.profile_picture}></img>
+    {players && players.map((player, index) =>
+      <button onClick={() => routeChange(player.id)} className="playerCard" key={index}>
+        <img alt="Bild på spelare" src={player.profile_picture}></img>
         <h1 >{player.playername}</h1>
         <p >{player.position}</p>
-      </div>
+      </button>
     )}
   </div>)
 

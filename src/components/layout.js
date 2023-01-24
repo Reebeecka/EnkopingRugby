@@ -25,7 +25,7 @@ export const Layout = () => {
 
   return (<>
     <header>
-      <img alt="Enköpings logo" onClick={routeChange} src={logo}></img>
+      <button onClick={routeChange}><img alt="Enköpings logo länk till startsida" src={logo}></img></button>
       <h1>{heading}</h1>
     </header>
     <main>

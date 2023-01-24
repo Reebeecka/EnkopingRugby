@@ -50,7 +50,7 @@ export function Playerpictures(props) {
                     {
                         allImages.map(image =>
                             <a href={image.guid}>
-                            <img style={{width:"150px", height:"102px", "object-fit":"cover", opacity:"0.9"}} alt="" src={image.guid}></img>
+                            <img style={{width:"150px", height:"102px", "object-fit":"cover", opacity:"0.9"}} alt="Bild på spelaren" src={image.guid}></img>
                             </a>
                         )
                     }
