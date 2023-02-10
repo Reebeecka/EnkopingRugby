@@ -1,6 +1,6 @@
 <h1>Enköping Rugbyklubb Damer </h1>
 <h2>Examensarbete Rebecka Larsson </h2> 
-<br>
+
 <h3> Figma demo </h3>
 <a href="https://www.figma.com/file/WDDTXRhkktL4eHacOzOKuz/Enk%C3%B6ping-Rugbyklubb?node-id=7%3A291&t=NHIJlgKlvpTzTCgQ-1">Link to figma</a>
 
