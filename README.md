@@ -3,7 +3,6 @@
 <br>
 <h3> Figma demo </h3>
 <a href="https://www.figma.com/file/WDDTXRhkktL4eHacOzOKuz/Enk%C3%B6ping-Rugbyklubb?node-id=7%3A291&t=NHIJlgKlvpTzTCgQ-1">Link to figma</a>
-<br>
 
 <h3>Tech stack</h3>
 <p>In the project I decided to use WordPress Local to create the backend of the site, this makes it possible to add information to the API in WordPress without the knowledge of coding. The backend is built up so that I can call the main API and get all the information from all the posts included in the API. This includes everything that is automatic from WordPress for example the ID of the post, who wrote it, the status and more. I have also added custom fields to all the posts that also gets included when I call this main API.</p>
