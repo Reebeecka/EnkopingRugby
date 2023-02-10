@@ -38,10 +38,11 @@
 <img src="https://i.ibb.co/wYfdwQ3/desktop2.png" alt="desktop2" border="0">
 <img src="https://i.ibb.co/bNh8gnk/desktop3.png" alt="desktop3" border="0">
 <img src="https://i.ibb.co/2kQx0DC/desktop4.png" alt="desktop4" border="0">
+<h4>Mobile</h4>
+<img src="https://i.ibb.co/WxTQNVd/mobile1.png"  width="300" alt="mobile1" border="0">
+<img src="https://i.ibb.co/WPkPX9Z/mobile2.png"  width="300" alt="mobile2" border="0">
+<img src="https://i.ibb.co/n3j0S3h/mobile3.png"  width="300" alt="mobile3" border="0">
+<img src="https://i.ibb.co/gSHcX4W/mobile4.png"  width="300" alt="mobile4" border="0">
+<img src="https://i.ibb.co/GT6rGzF/mobile5.png" width="300" alt="mobile5" border="0">
 
-<a href="https://ibb.co/NSvGfc7"><img src="https://i.ibb.co/GT6rGzF/mobile5.png" alt="mobile5" border="0"></a>
-<a href="https://ibb.co/ZBtbw2g"><img src="https://i.ibb.co/gSHcX4W/mobile4.png" alt="mobile4" border="0"></a>
-<a href="https://ibb.co/f8HS78m"><img src="https://i.ibb.co/n3j0S3h/mobile3.png" alt="mobile3" border="0"></a>
-<a href="https://ibb.co/5nrn3Dm"><img src="https://i.ibb.co/WPkPX9Z/mobile2.png" alt="mobile2" border="0"></a>
-<a href="https://ibb.co/SsL2Df1"><img src="https://i.ibb.co/WxTQNVd/mobile1.png" alt="mobile1" border="0"></a>
 
