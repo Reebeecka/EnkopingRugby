@@ -34,10 +34,10 @@
 
 <h3>Screenshots</h3>
 <h4>Desktop</h4>
-<a href="https://ibb.co/b6rQzGZ"><img src="https://i.ibb.co/tHbQ81t/desktop1.png" alt="desktop1" border="0"></a>
-<a href="https://ibb.co/6Nky1tV"><img src="https://i.ibb.co/wYfdwQ3/desktop2.png" alt="desktop2" border="0"></a>
-<a href="https://ibb.co/h25tRvS"><img src="https://i.ibb.co/bNh8gnk/desktop3.png" alt="desktop3" border="0"></a>
-<a href="https://ibb.co/FDM2kSy"><img src="https://i.ibb.co/2kQx0DC/desktop4.png" alt="desktop4" border="0"></a>
+<img src="https://i.ibb.co/tHbQ81t/desktop1.png" alt="desktop1" border="0">
+<img src="https://i.ibb.co/wYfdwQ3/desktop2.png" alt="desktop2" border="0">
+<img src="https://i.ibb.co/bNh8gnk/desktop3.png" alt="desktop3" border="0">
+<img src="https://i.ibb.co/2kQx0DC/desktop4.png" alt="desktop4" border="0">
 
 <a href="https://ibb.co/NSvGfc7"><img src="https://i.ibb.co/GT6rGzF/mobile5.png" alt="mobile5" border="0"></a>
 <a href="https://ibb.co/ZBtbw2g"><img src="https://i.ibb.co/gSHcX4W/mobile4.png" alt="mobile4" border="0"></a>
